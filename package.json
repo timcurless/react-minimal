@@ -1,0 +1,30 @@
+{
+  "name": "react-minimal",
+  "version": "0.1.0",
+  "description": "Tim's minimal react starting boilerplate",
+  "repository": "git+https://github.com/timcurless/react-minimal.git",
+  "engines": {
+    "npm": ">=3",
+    "node": ">=5"
+  },
+  "author": "Tim Curless",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/timcurless/react-minimal/issues"
+  },
+  "homepage": "https://github.com/timcurless/react-minimal#readme",
+  "keywords": [
+    "react",
+    "redux",
+    "boilerplate"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "express": "^4.15.3",
+    "ip": "^1.1.5",
+    "minimist": "^1.2.0"
+  }
+}
