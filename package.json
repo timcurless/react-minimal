@@ -2,7 +2,10 @@
   "name": "react-minimal",
   "version": "0.1.0",
   "description": "Tim's minimal react starting boilerplate",
-  "repository": "git+https://github.com/timcurless/react-minimal.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timcurless/react-minimal.git"
+  },
   "engines": {
     "npm": ">=3",
     "node": ">=5"
