@@ -4,6 +4,7 @@ import 'babel-polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
 import FontFaceObserver from 'fontfaceobserver';
 import { useScroll } from 'react-router-scroll';
@@ -17,6 +18,8 @@ import '!file-loader?name=[name].[ext]!./favicon.ico';
 import '!file-loader?name=[name].[ext]!./manifest.json';
 /* eslint-enable import/no-webpack-loader-syntax */
 
+import configureStore from './store/configureStore';
+
 import './global-styles';
 
 import createRoutes from './routes';
@@ -29,6 +32,8 @@ openSansObserver.load().then(() => {
   document.body.classList.remove('fontLoaded');
 });
 
+const store = configureStore();
+
 const history = browserHistory;
 
 const rootRoute = {
@@ -37,13 +42,15 @@ const rootRoute = {
 };
 
 ReactDOM.render(
-  <Router
-    history={history}
-    routes={rootRoute}
-    render={
-      applyRouterMiddleware(useScroll())
-    }
-  />,
+  <Provider store={store}>
+    <Router
+      history={history}
+      routes={rootRoute}
+      render={
+        applyRouterMiddleware(useScroll())
+      }
+    />
+  </Provider>,
   document.getElementById('app')
 );
 
