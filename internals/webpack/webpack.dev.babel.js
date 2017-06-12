@@ -12,7 +12,7 @@ const dllPlugin = pkg.dllPlugin;
 
 const plugins = [
   new webpack.HotModuleReplacementPlugin(),
-  new webpack.NoEmitOnErrorsPlugin(),
+  new webpack.NoErrorsPlugin(),
   new HtmlWebpackPlugin({
     inject: true,
     templateContent: templateContent(), // eslint-disable-line no-use-before-define
