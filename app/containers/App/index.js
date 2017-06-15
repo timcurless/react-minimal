@@ -1,5 +1,9 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import styled from 'styled-components';
+
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 const AppWrapper = styled.div`
   background-color: #fff;
@@ -14,7 +18,16 @@ const AppWrapper = styled.div`
 export function App(props) {
   return (
     <AppWrapper>
+      <Helmet
+        titleTemplate="%s - Atlas Bag Management"
+        defaultTitle="Atlas Bag Management"
+        meta={[
+          { name: 'description', content: 'AHEAD Bag Demo App' },
+        ]}
+      />
+      <Header />
       {React.Children.toArray(props.children)}
+      <Footer />
     </AppWrapper>
   );
 }
